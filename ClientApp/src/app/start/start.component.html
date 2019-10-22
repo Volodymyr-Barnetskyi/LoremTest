@@ -8,7 +8,7 @@
       <mat-form-field>
         <input color="accent" matInput formControlName="group" placeholder="Група" required />
       </mat-form-field>
-      <button [ngClass]="'main__button'" mat-raised-button color="warn" routerLink="/test">Розпочати тест</button>
+      <button [disabled]='form.invalid' [ngClass]="'main__button'" mat-raised-button color="warn" routerLink="/test">Розпочати тест</button>
       </mat-card>
 </form>
 </section>
