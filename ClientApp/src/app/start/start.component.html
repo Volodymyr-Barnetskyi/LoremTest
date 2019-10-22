@@ -1,0 +1,14 @@
+<section [ngClass]="'begin'">
+  <h2 [ngClass]="'main__h1'">Реєстрація студента</h2>
+  <form [ngStyle]="{'width':'50%'}" action="" [formGroup]="form" (ngSubmit)="Submit()">
+    <mat-card [ngClass]="'form__style'">
+      <mat-form-field>
+        <input color="accent" matInput formControlName="full" placeholder="ПІБ" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input color="accent" matInput formControlName="group" placeholder="Група" required />
+      </mat-form-field>
+      <button [ngClass]="'main__button'" mat-raised-button color="warn" routerLink="/test">Розпочати тест</button>
+      </mat-card>
+</form>
+</section>
