@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
@@ -10,8 +10,8 @@ export class StartComponent implements OnInit {
     }
   constructor() { }
     form = new FormGroup({
-    full: new FormControl(''),
-    group: new FormControl(''),
+        full: new FormControl('', Validators.required),
+        group: new FormControl('', Validators.required),
   }
     );
   Submit() {

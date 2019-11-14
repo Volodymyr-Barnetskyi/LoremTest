@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import {PreloadAllModules, RouterModule} from '@angular/router';
 import { MatCardModule, MatIconModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatToolbarModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,14 +32,15 @@ import { TestComponent } from './test/test.component';
     HttpClientModule,
     FormsModule,
     MatCardModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: MaintestComponent, pathMatch: 'full' },
-      { path: 'rating', component: RatingComponent },
-      { path: 'maintest', component: MaintestComponent },
-      { path: 'start', component: StartComponent },
-      { path: 'test', component: TestComponent }
-    ]),
-    BrowserAnimationsModule
+          { path: '', redirectTo: 'maintest', pathMatch: 'full'},
+          { path: 'maintest', component: MaintestComponent },
+          { path: 'rating', component: RatingComponent },
+          { path: 'start', component: StartComponent },
+          { path: 'test', component: TestComponent },
+          {path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
+    ], { preloadingStrategy: PreloadAllModules })
   ],
   providers: [],
   bootstrap: [AppComponent]
