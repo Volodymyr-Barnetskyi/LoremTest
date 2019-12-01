@@ -6,15 +6,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
-    ngOnInit(): void {
-    }
-  constructor() { }
-    form = new FormGroup({
-        full: new FormControl('', Validators.required),
-        group: new FormControl('', Validators.required),
-  }
-    );
-  Submit() {
 
+  constructor() {
+  }
+
+  form = new FormGroup({
+      full: new FormControl('', Validators.required),
+      group: new FormControl('', Validators.required),
+    }
+  );
+  ngOnInit(): void {
+  }
+
+  Submit() {
+    const test = this.form.value;
+    console.log(test);
   }
 }
